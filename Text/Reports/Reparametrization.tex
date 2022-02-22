@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+
+\usepackage{fourier}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{bm,bbm}
+\usepackage{microtype}
+
+\title{Useful Distributions and their Reparametrization}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+We will stipulate the notation following \texttt R's convention~\citep{RManual}.
+
+\section{Weibull distribution}
+
+\section{Lognormal distribution}
+
+We say that the positive random variable $X$ follows a Lognormal distribution with parameters $\alpha,\beta>0$ if its density is
+\begin{equation}
+f_X(x;\alpha,\beta^2) = \frac{1}{x\sqrt{2\pi}\beta} \exp\Big\{
+-\frac{\big(\ln x - \alpha\big)^2}{2 \beta^2}
+\Big\}.
+\label{Eq:DensLogNormal}
+\end{equation}
+Its mean and variance are, respectively,
+\begin{align}
+	\mu & = \exp\Big\{\alpha+\frac{\beta^2}{2}\Big\}\label{Eq:MeanLogNormal}\\
+\intertext{and}
+	\sigma^2 & = \big(\exp\big\{\beta^2\big\}-1\big) \exp\big\{2\alpha+\beta^2\big\}. \label{Eq:VarianceLogNormal}
+\end{align}
+\section{Beta distribution}
+
+\section{Gamma distribution}
+
+\section{Hyperbolic distribution}
+
+The complete form of the Hyperbolic distribution is characterized by the following probability density function:
+\begin{equation}
+f_X(x; \zeta,\omega) = \frac{1}{2 \delta\sqrt{1+\omega^2} K_1(\zeta)}
+\exp\Big\{
+-\zeta \Big( 
+\sqrt{(1+\omega^2)\Big[1+\Big(\frac{x-\eta}{\delta}\Big)^2\Big]} - \omega \frac{x-\eta}{\delta}
+\Big)
+\Big\},
+\label{Eq:HyperbolicDensity}
+\end{equation}
+where $K_1$ is a Bessel function,
+with real support, and $\zeta>0$ and $\omega$ real.
+The parameters $\eta$ and $\delta$ are the location and position parameters~\eqref{Eq:HyperbolicDensity}.
+The connection between this and other forms are described in \citet[][article ``Hyperbolic Distributions,'' pages 3276--3283 ]{EncyclopediaofStatisticalSciences}.
+Its mean and variance are:
+\begin{align}
+\mu & = \eta+\delta\omega R_1(\zeta),\\
+\intertext{and}
+\sigma^2 & = \delta^2\Big[ \frac{R_1(\zeta)}{\zeta}+\omega^2 S_1(\zeta)\Big],
+\end{align}
+respectively, in which
+\begin{align*}
+R_\lambda(\zeta) & = \frac{K_{\lambda+1}(\zeta)}{K_{\lambda}(\zeta)},
+\intertext{and}
+S_\lambda(\zeta) & = K_{\lambda+2}(\zeta) K_{\lambda}(\zeta) - K^2_{\lambda+1}(\zeta).
+\end{align*}
+\bibliography{../references}
+\bibliographystyle{agsm}
+\end{document}
