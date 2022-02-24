@@ -10,7 +10,7 @@ fnWeibull <-function(start,mean,variance)
 fnBeta <- function(start,mean,variance)
 {
     rate <- start[1]/(start[1] + start[2]) - mean
-    shape <- start[1]*start[2]/((start[1]+start[2])^2 (start[1]+start[2]+1)) - variance
+    shape <- start[1]*start[2]/((start[1]+start[2])^2 *(start[1]+start[2]+1)) - variance
     return(c(rate,shape))
 }
 
