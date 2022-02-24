@@ -40,21 +40,21 @@ dWeibullMeanVar <- function(x, mean, variance)
 dBetaMeanVar <- function(x, mean, variance) 
 {
     parametros <- nleqslv(c(1,1),fnBeta,jac=NULL,mean,variance)$x
-    return (dweibull(x,parametros[1],parametros[2]))
+    return (dbeta(x,parametros[1],parametros[2]))
   
 }
 
 dLognormMeanVar <- function(x, mean, variance) 
 {
     parametros <- nleqslv(c(1,1),fnLogNorm,jac=NULL,log(mean),log(variance))$x #conferir se o uso do log está correto
-    return (dweibull(x,parametros[1],parametros[2]))
+    return (dlnorm(x,parametros[1],parametros[2]))
   
 }
 
 dGammaMeanVar <- function(x, mean, variance) 
 {
     parametros <- nleqslv(c(1,1),fnGamma,jac=NULL,mean,variance)$x #conferir se o uso do log está correto
-    return (dweibull(x,parametros[1],parametros[2]))
+    return (dgamma(x,parametros[1],parametros[2]))
   
 }
 
